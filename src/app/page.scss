@@ -1,0 +1,21 @@
+body, html {
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: max-content;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 999px;
+    margin: 10px;
+}

@@ -1,0 +1,18 @@
+.text-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .texted {
+        display: flex;
+        width: max-content;
+        height: min-content;
+    
+        span {
+            font-size: 90px;
+            font-weight: 500;
+            padding-right: 40px;
+            white-space: nowrap;
+        }
+    }
+}

@@ -1,0 +1,230 @@
+header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        position: relative;
+        width: 99%;
+        height: 97%;
+        border-radius: 33px;
+        box-shadow:
+            0 45px 63.1px rgba(0, 0, 0, 0.18),
+            0 18px 42.5px rgba(0, 133, 181, 0.25)
+        ;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .fond {
+            background: url(/background.mp4);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            z-index: -1;
+            position: absolute;
+            filter:
+                saturate(200%)
+                contrast(130%)
+                brightness(40%)
+            ;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            padding: 1.5rem 2rem;
+            align-items: center;
+            justify-content: space-between;
+
+            img {
+                width: 200px;
+                pointer-events: none;
+                user-select: none;
+            }
+
+            .link {
+                display: flex;
+                gap: 40px;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    transition: 0.3s;
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            gap: 3vw;
+            align-items: center;
+            padding-right: 20px;
+
+            a {
+                color:black;
+                background: white;
+                text-decoration: none;
+                padding: 1rem 4rem;
+                border-radius: 25px;
+                font-weight: 600;
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            span {
+                color: white;
+                font-size: 23px;
+            }
+        }
+
+        .hero {
+            margin-top: auto;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            position: relative;
+
+            .tiquet {
+                width: fit-content;
+                padding: 0.5rem 2rem 0.5rem 1rem;
+                border: 3px solid rgba(255, 255, 255, 0.096);
+                background: transparent;
+                border-radius: 999px;
+                backdrop-filter: blur(15px);
+                display: flex;
+                flex-direction: row;
+                gap: 1vw;
+                align-items: center;
+                justify-content: center;
+                transform: scale(0.1);
+                opacity: 0;
+
+                .circle {
+                    color: #00FF37;
+                    font-size: 15px;
+                }
+            }
+
+            h1 {
+                color: white;
+                font-weight: 300;
+                font-size: 60px;
+                width: 1000px;
+                margin: 0;
+            }
+
+            .paragraphes {
+                display: flex;
+                width: 100%;
+                height: min-content;
+                align-items: flex-start;
+
+                p {
+                    color: rgba(255, 255, 255, 0.662);
+                    font-size: 25px;
+                    margin-bottom: auto;
+                    width: 1000px;
+                }
+
+                p:last-child {
+                    text-align: end;
+                    margin-left: auto;
+                    width: 500px;
+                    font-size: 19px;
+                }
+            }
+
+            .cta {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .others {
+                    display: flex;
+                    flex-direction: row;
+                    height: 100%;
+                    align-items: end;
+                    gap: 1vw;
+
+                    .arrows {
+                        font-size: 35px;
+                        transition: 0.3s;
+                        cursor: pointer;
+
+                        &:hover {
+                            transform: scale(1.25);
+                        }
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    gap: 1vw;
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        font-weight: 600;
+                        background: white;
+                        padding: 1rem 3rem;
+                        border-radius: 25px;
+                        margin: 0;
+                        opacity: 0;
+                        transform: scale(0.2);
+                    }
+
+                    a:last-child {
+                        border: 3px solid white;
+                        color: white;
+                        background: transparent;
+                        backdrop-filter: blur(15px);
+                    }
+                }
+            }
+        }
+
+        .droiture {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            pointer-events: none;
+
+            .encoche {
+                width: 75px;
+                height: 75px;
+                color: black;
+                border-top-right-radius: 999px;
+                border-top-left-radius: 999px;
+                display: flex;
+                z-index: 100;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                pointer-events: all;
+                background: white;
+                transition: 0.3s;
+
+                &:hover {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+    }
+}
