@@ -19,6 +19,7 @@ export default function Header() {
     const btn1 = useRef(null);
     const btn2 = useRef(null);
     const section = useRef(null);
+    const img = useRef(null);
 
     function onHover() {
         if (!btn1.current) return;
@@ -143,6 +144,16 @@ export default function Header() {
             ease: "sine.out",
             filter: 'blur(15px)'
           });
+
+          gsap.to(img.current, {
+            scrollTrigger: {
+                trigger: section.current,
+                start: 'bottom 50%',
+                end: "bottom 0%",
+                scrub: 1,
+            },
+            scale: 1.5,
+          });
         
           return () => {
             split.revert();
@@ -152,7 +163,7 @@ export default function Header() {
     return(
         <header>
             <div className="container" ref={section}>
-                <div className="fond"></div>
+                <div className="fond" ref={img}></div>
                 <nav>
                     <a href="https://mugdi.com">
                         <img src={"/logo.png"} alt="logo" />

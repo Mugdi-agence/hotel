@@ -156,6 +156,7 @@ export default function Resort() {
       },
       y:0,
     });
+
     return () => {
       split.revert();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -196,7 +197,7 @@ export default function Resort() {
         {resortData.map((resort) => (
           <div className="card" key={resort.id}> 
             <ArrowOutwardIcon className="arrow"/> 
-            <img src={resort.imageUrl} alt={resort.title} /> 
+            <img src={resort.imageUrl} alt={resort.title}/> 
             <div className="content">
               <h3>{resort.title}</h3> 
               <p>{resort.description}</p> 
