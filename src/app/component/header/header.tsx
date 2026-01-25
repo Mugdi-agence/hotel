@@ -57,34 +57,25 @@ export default function Header() {
         });
     }
 
+
     useEffect(() => {
-        // et enfin ici
-        const split = new SplitText(h1.current, { type: "lines"});
-        const splot = new SplitText(p.current, { type: "lines"});
-        const splut = new SplitText(p2.current, { type: "lines"});
 
-        split.lines.forEach(line => {
-            const wrapper = document.createElement('div');
-            wrapper.style.overflow = 'hidden';
-            line.parentNode?.insertBefore(wrapper, line);
-            wrapper.appendChild(line);
+        const splitH1 = new SplitText(h1.current, {
+            type: "lines",
+            linesClass: "line"
           });
-
-          splot.lines.forEach(line => {
-            const wrapper = document.createElement('div');
-            wrapper.style.overflow = 'hidden';
-            line.parentNode?.insertBefore(wrapper, line);
-            wrapper.appendChild(line);
+          
+          const splitP1 = new SplitText(p.current, {
+            type: "lines",
+            linesClass: "line"
           });
-
-          splut.lines.forEach(line => {
-            const wrapper = document.createElement('div');
-            wrapper.style.overflow = 'hidden';
-            line.parentNode?.insertBefore(wrapper, line);
-            wrapper.appendChild(line);
+          
+          const splitP2 = new SplitText(p2.current, {
+            type: "lines",
+            linesClass: "line"
           });
         
-          gsap.from(split.lines, {
+          gsap.from(splitH1.lines, {
             yPercent: 100,
             scale: 1.01,
             duration: 1,
@@ -92,7 +83,7 @@ export default function Header() {
             ease: "power3.out"
           });
 
-          gsap.from(splot.lines, {
+          gsap.from(splitP1.lines, {
             yPercent: 100,
             scale: 1.01,
             duration: 1,
@@ -100,7 +91,7 @@ export default function Header() {
             ease: "power3.out"
           });
 
-          gsap.from(splut.lines, {
+          gsap.from(splitP2.lines, {
             yPercent: 100,
             scale: 1.01,
             duration: 1,
@@ -154,11 +145,6 @@ export default function Header() {
             },
             scale: 1.5,
           });
-        
-          return () => {
-            split.revert();
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-          };
     }, []);
     return(
         <header>
